@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+import Container from "./Container.astro";
+---
+
+<section id="nav-bar" class="z-30 fixed top-0 left-0 w-full transition-transform delay-100 duration-300 ease-out">
+    <Container>
+        <div class="flex justify-between items-center">
+            <a href="/">
+                <Icon name="logo" font-size="2.2rem" />
+            </a>
+            <div>
+                Menu
+            </div>
+        </div>
+    </Container>
+</section>
+
+<script>
+    const navBar = document.getElementById("nav-bar")  
+    let currentYScroll = window.scrollY
+    const bgNavBar = "bg-white/40"
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY === 0) {
+            navBar.classList.remove(bgNavBar)
+        } else  {
+            navBar.classList.add(bgNavBar)
+        }
+
+        if (window.scrollY - currentYScroll > 0) {
+            // Scroll is going down
+            // so remove nave bar 
+            navBar.classList.add("-translate-y-full")
+        } else {
+            // Scroll is going down
+            // Scroll is going up
+            // so show nave bar 
+            navBar.classList.remove("-translate-y-full")
+        }
+
+        currentYScroll = window.scrollY
+    })
+</script>

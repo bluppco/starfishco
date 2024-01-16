@@ -1,0 +1,18 @@
+---
+// COMPONENTS
+import SingleCase from "./SingleCase.astro";
+
+// CONSTANTS
+import { CASES } from "../../constants/cases";
+const totalCases = CASES.length
+---
+
+<section>
+	{
+		CASES.map((c, idx) => {
+			return <div class="py-8">
+				<SingleCase title={c.title} img={c.img} alt={c.alt} color={c.color} current={idx + 1} total={totalCases} />
+			</div>	
+		})
+	}
+</section>

@@ -1,0 +1,2 @@
+export const HOME_INTRO_VIDEO = "https://www.starfishco.com/wp-content/uploads/2022/12/starfish_desktop_18_sec-1080p.mp4"
+export const BRAND_EXPERIENCE_GIF = "https://www.starfishco.com/wp-content/themes/Starfish/assets/img/sf_textanimation_desktop.gif"
