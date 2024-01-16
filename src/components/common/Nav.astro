@@ -3,7 +3,7 @@ import { Icon } from "astro-icon/components";
 import Container from "./Container.astro";
 ---
 
-<section id="nav-bar" class="fixed top-0 left-0 w-full transition-transform delay-100 duration-300 ease-out">
+<section id="nav-bar" class="z-30 fixed top-0 left-0 w-full transition-transform delay-100 duration-300 ease-out">
     <Container>
         <div class="flex justify-between items-center">
             <a href="/">
@@ -18,7 +18,7 @@ import Container from "./Container.astro";
 
 <script>
     const navBar = document.getElementById("nav-bar")  
-    const currentYScroll = window.scrollY
+    let currentYScroll = window.scrollY
     const bgNavBar = "bg-white/40"
 
     window.addEventListener("scroll", () => {
@@ -33,9 +33,12 @@ import Container from "./Container.astro";
             // so remove nave bar 
             navBar.classList.add("-translate-y-full")
         } else {
+            // Scroll is going down
             // Scroll is going up
             // so show nave bar 
             navBar.classList.remove("-translate-y-full")
         }
+
+        currentYScroll = window.scrollY
     })
 </script>
