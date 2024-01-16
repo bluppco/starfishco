@@ -1,0 +1,1 @@
+export const HOME_INTRO_VIDEO = "https://www.starfishco.com/wp-content/uploads/2022/12/starfish_desktop_18_sec-1080p.mp4"

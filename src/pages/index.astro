@@ -1,16 +1,21 @@
 ---
+// IMPORTING LAYOUTS
+import IndexLayout from "../layout/IndexLayout.astro";
 
+// IMPORTING COMPONENTS
+import HomeIntro from "../components/home/HomeIntro.astro";
+
+// IMPORTING CONSTANTS
+import {OG_IMAGE} from "../constants/website";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<IndexLayout
+	title="Branding Agency NYC- Starfish"
+	description="Starfish is a strategically driven branding and creative communications agency that is dedicated to designing powerful and meaningful experiences."
+	image={OG_IMAGE}
+>
+
+	{/* nav */}
+	<HomeIntro />
+
+</IndexLayout>
