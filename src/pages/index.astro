@@ -3,13 +3,18 @@
 import IndexLayout from "../layout/IndexLayout.astro";
 
 // IMPORTING COMPONENTS
-import HomeIntro from "../components/home/HomeIntro.astro";
 import Nav from "../components/common/Nav.astro";
+import Footer from "../components/common/Footer.astro";
+
+import HomeIntro from "../components/home/HomeIntro.astro";
+import BrandExperience from "../components/home/brandExperience.astro";
+import SeeWork from "../components/home/SeeWork.astro";
+import Container from "../components/common/Container.astro";
+import Cases from "../components/home/Cases.astro";
+import Contact from "../components/home/Contact.astro";
 
 // IMPORTING CONSTANTS
 import {OG_IMAGE} from "../constants/website";
-import BrandExperience from "../components/home/brandExperience.astro";
-import SeeWork from "../components/home/SeeWork.astro";
 ---
 
 <IndexLayout
@@ -30,8 +35,13 @@ import SeeWork from "../components/home/SeeWork.astro";
 	<BrandExperience />
 
 	{/* works */}
+	<Container>
+		<Cases />
+	</Container>	
 
-	{/* connect */}
+	{/* contact */}
+	<Contact />
 
 	{/* footer */}
+	<Footer />
 </IndexLayout>

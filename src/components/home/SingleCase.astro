@@ -1,0 +1,26 @@
+---
+const {
+	current,
+	total,
+	title,
+	color,
+	img,
+	alt
+} = Astro.props;
+---
+
+<section class="w-full h-full overflow-hidden relative group">
+	<img src={img} alt={alt} class="group-hover:scale-110 transform transition duration-500" />
+
+	<div class={`absolute top-0 left-0 h-full w-[30%] ${color}`}>
+		<div class="relative h-full flex flex-col justify-center p-12">
+			<p class="absolute top-0 left-0 text-white p-12 text-lg">
+				{current} <span class="text-3xl">|</span> {total}
+			</p>
+			<div>
+				<h1 class="text-9xl text-white font-bold">{title}</h1>
+				<p class="text-white text-xl">See Cases</p>
+			</div>	
+		</div>
+	</div>
+</section>
