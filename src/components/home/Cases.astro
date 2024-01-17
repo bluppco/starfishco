@@ -5,14 +5,17 @@ import SingleCase from "./SingleCase.astro";
 // CONSTANTS
 import { CASES } from "../../constants/cases";
 const totalCases = CASES.length
+const { data } = Astro.props
+// console.log( "a", data )
 ---
 
 <section>
 	{
-		CASES.map((c, idx) => {
+		data.map((c, idx) => {
+			console.log(c)
 			return <div class="py-8">
-				<SingleCase title={c.title} img={c.img} alt={c.alt} color={c.color} current={idx + 1} total={totalCases} />
-			</div>	
+				<SingleCase title={c.title} img={c.cover} alt={c.alt} color={c.color_code} current={idx + 1} total={data} />
+			</div>
 		})
 	}
 </section>

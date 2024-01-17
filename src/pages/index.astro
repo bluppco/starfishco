@@ -1,4 +1,11 @@
 ---
+import { homeAPI } from "../api/home/index"
+
+const runtime = Astro.locals.runtime
+const data = await homeAPI( runtime.env.ENVIRONMENT )
+
+const { meta_tags, work } = data
+
 // IMPORTING LAYOUTS
 import IndexLayout from "../layout/IndexLayout.astro";
 
@@ -18,8 +25,8 @@ import {OG_IMAGE} from "../constants/website";
 ---
 
 <IndexLayout
-	title="Branding Agency NYC- Starfish"
-	description="Starfish is a strategically driven branding and creative communications agency that is dedicated to designing powerful and meaningful experiences."
+	title={ meta_tags.title }
+	description={ meta_tags.description }
 	image={OG_IMAGE}
 >
 
@@ -36,8 +43,8 @@ import {OG_IMAGE} from "../constants/website";
 
 	{/* works */}
 	<Container>
-		<Cases />
-	</Container>	
+		<Cases data={ work }/>
+	</Container>
 
 	{/* contact */}
 	<Contact />
