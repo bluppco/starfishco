@@ -1,12 +1,19 @@
 ---
 const {
-	current,
-	total,
-	title,
+
+	alt,
 	color,
+	current,
 	img,
-	alt
+	title,
+	total,
+
 } = Astro.props;
+import {
+
+	CDN_LINK, IMAGE_QUALITY
+
+} from "../../constants/cdn"
 ---
 
 <section class="w-full h-full overflow-hidden lg:relative group">
@@ -18,9 +25,9 @@ const {
 			<div>
 				<h1 class="text-8xl lg:text-9xl text-white/90 font-bold">{title}</h1>
 				<p class="text-white/90 text-xl">See Cases</p>
-			</div>	
+			</div>
 		</div>
 	</div>
 
-	<img src={img} alt={alt} class="group-hover:scale-110 transform transition duration-500" />
+	<img src={ CDN_LINK + img + "?quality=" + IMAGE_QUALITY } alt={alt} class="group-hover:scale-110 transform transition duration-500" />
 </section>
