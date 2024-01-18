@@ -1,0 +1,29 @@
+---
+const {
+	color,
+	current,
+	img,
+	title,
+	total,
+} = Astro.props;
+
+import {
+	CDN_LINK, IMAGE_QUALITY
+} from "../../constants/cdn"
+---
+
+<section class="w-full overflow-hidden lg:relative group">
+	<div class={`z-10 lg:absolute top-0 left-0 h-full w-full lg:w-[30%]`} style={`background-color: ${color}`}>
+		<div class="relative h-full flex flex-col justify-center px-4 lg:px-8  py-16 lg:py-32">
+			<p class="lg:absolute hidden lg:block top-0 left-0 text-white p-12 text-lg">
+				{current} <span class="text-3xl">|</span> {total}
+			</p>
+			<div>
+				<h1 class="text-3xl lg:text-9xl text-white font-bold">{title}</h1>
+				<p class="text-white/90 text-xl">See Cases</p>
+			</div>
+		</div>
+	</div>
+
+	<img src={ CDN_LINK + img + "?quality=" + IMAGE_QUALITY } class="group-hover:scale-110 transform transition duration-500 w-full" />
+</section>
