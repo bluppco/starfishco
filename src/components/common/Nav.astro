@@ -1,31 +1,37 @@
 ---
 import { Icon } from "astro-icon/components";
-import Container from "./Container.astro";
+
+import Container from "../../layouts/Container.astro";
+import MenuButton from "./MenuButton.astro";
 ---
 
-<section id="nav-bar" class="z-30 fixed top-0 left-0 w-full transition-transform delay-100 duration-300 ease-out">
+<section id="nav-bar" class="py-4 z-30 fixed top-0 left-0 w-full transition-transform delay-100 duration-300 ease-out">
     <Container>
         <div class="flex justify-between items-center">
             <a href="/">
                 <Icon name="logo" font-size="2.2rem" />
             </a>
-            <div>
-                Menu
-            </div>
+            <MenuButton />
         </div>
     </Container>
 </section>
 
 <script>
     const navBar = document.getElementById("nav-bar")  
+
     let currentYScroll = window.scrollY
-    const bgNavBar = "bg-white/40"
+    let fullVideoHeight = window.innerHeight
+
+    const bgNavBar = "bg-white/50"
+    const blurNavBar = "backdrop-blur-xl"
 
     window.addEventListener("scroll", () => {
-        if (window.scrollY === 0) {
-            navBar.classList.remove(bgNavBar)
-        } else  {
+        if (window.scrollY > fullVideoHeight) {
             navBar.classList.add(bgNavBar)
+            navBar.classList.add(blurNavBar)
+        } else  {
+            navBar.classList.remove(bgNavBar)
+            navBar.classList.remove(blurNavBar)
         }
 
         if (window.scrollY - currentYScroll > 0) {

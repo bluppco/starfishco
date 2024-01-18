@@ -1,5 +1,5 @@
 ---
-import { homeAPI } from "../api/home/index"
+import { homeAPI } from "../api/home"
 
 const runtime = Astro.locals.runtime
 const data = await homeAPI( runtime.env.ENVIRONMENT )
@@ -7,24 +7,26 @@ const data = await homeAPI( runtime.env.ENVIRONMENT )
 const { meta_tags, work } = data
 
 // IMPORTING LAYOUTS
-import IndexLayout from "../layout/IndexLayout.astro";
+import Layout from "../layouts/Layout.astro";
 
 // IMPORTING COMPONENTS
+// COMMON
 import Nav from "../components/common/Nav.astro";
 import Footer from "../components/common/Footer.astro";
 
-import HomeIntro from "../components/home/HomeIntro.astro";
+// HOME
+import Video from "../components/home/Video.astro";
 import BrandExperience from "../components/home/brandExperience.astro";
 import SeeWork from "../components/home/SeeWork.astro";
-import Container from "../components/common/Container.astro";
 import Cases from "../components/home/Cases.astro";
 import Contact from "../components/home/Contact.astro";
 
 // IMPORTING CONSTANTS
 import {OG_IMAGE} from "../constants/website";
+import Container from "../layouts/Container.astro";
 ---
 
-<IndexLayout
+<Layout
 	title={ meta_tags.title }
 	description={ meta_tags.description }
 	image={OG_IMAGE}
@@ -34,21 +36,22 @@ import {OG_IMAGE} from "../constants/website";
 	<Nav />
 
 	{/* Home */}
-	<HomeIntro />
+	<Video />
 
 	{/* See Work Floter */}
-	<SeeWork />
-
-	<BrandExperience />
-
-	{/* works */}
+	<SeeWork/>
+	
 	<Container>
-		<Cases data={ work }/>
-	</Container>
+		{/* Brand Experience GIF*/}
+		<BrandExperience />
 
-	{/* contact */}
-	<Contact />
+		{/* cases */}
+		<Cases work={ work }/>
+
+		{/* contact */}
+		<Contact />
+	</Container>	
 
 	{/* footer */}
 	<Footer />
-</IndexLayout>
+</Layout>

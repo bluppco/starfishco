@@ -1,10 +1,9 @@
 ---
-
 // IMPORTING CONSTANTS
 import { HOME_INTRO_VIDEO } from "../../constants/cdn";
 ---
 
-<section class="z-20 bg-zinc-600 h-screen realtive">
+<section class="z-20 bg-zinc-600 h-screen w-full realtive">
 	<video
         loop={ true }
         autoplay={ true }
@@ -16,7 +15,7 @@ import { HOME_INTRO_VIDEO } from "../../constants/cdn";
         <source src={HOME_INTRO_VIDEO} type="video/mp4"/>
     </video>
 
-	<div class="absolute bottom-14 flex justify-center w-full">
-		<img src="mouseScroll.gif" alt="Mouse Scroll Animation" class="h-14" />
+	<div class="absolute bottom-36 lg:bottom-14 flex justify-center w-full">
+		<img src="mouse.svg" alt="Mouse Scroll Animation" class="h-12 lg:h-14 animate-pulse"  />
 	</div>
 </section>
