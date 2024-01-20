@@ -1,17 +1,20 @@
 ---
 // COMPONENTS
+import Container from "../../layouts/Container.astro";
 import CaseSingle from "./CaseSingle.astro";
 
 const { work } = Astro.props
 const totalCases = work.length
 ---
 
-<section>
-	{
-		work.map((c, idx) => {
-			return <div class="py-4">
-				<CaseSingle title={c.title} img={c.cover} color={c.color_code} current={idx + 1} total={totalCases} />
-			</div>
-		})
-	}
-</section>	
+<Container>
+	<section>
+		{
+			work.map((c, idx) => {
+				return <div class="py-4">
+					<CaseSingle title={c.title} img={c.cover} color={c.color_code} current={idx + 1} total={totalCases} />
+				</div>
+			})
+		}
+	</section>	
+</Container>	
