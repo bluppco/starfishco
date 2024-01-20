@@ -23,7 +23,6 @@ import Contact from "../components/home/Contact.astro";
 
 // IMPORTING CONSTANTS
 import {OG_IMAGE} from "../constants/website";
-import Container from "../layouts/Container.astro";
 ---
 
 <Layout
@@ -40,17 +39,15 @@ import Container from "../layouts/Container.astro";
 
 	{/* See Work Floter */}
 	<SeeWork/>
-	
-	<Container>
-		{/* Brand Experience GIF*/}
-		<BrandExperience />
 
-		{/* cases */}
-		<Cases work={ work }/>
+	{/* Brand Experience GIF*/}
+	<BrandExperience />
 
-		{/* contact */}
-		<Contact />
-	</Container>	
+	{/* cases */}
+	<Cases work={ work }/>
+
+	{/* contact */}
+	<Contact />
 
 	{/* footer */}
 	<Footer />
