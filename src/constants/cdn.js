@@ -1,4 +1,4 @@
-export const HOME_INTRO_VIDEO = "/starfish.mp4"
+export const HOME_INTRO_VIDEO = "starfish_desktop_18_sec-1080p.mp4"
 export const BRAND_EXPERIENCE_GIF_DESK = "/brandExp_desktop.webp"
 export const BRAND_EXPERIENCE_GIF_MOBILE = "/brandExp_mobile.webp"
 export const CDN_LINK = "https://blupp.b-cdn.net/starfishco/"
