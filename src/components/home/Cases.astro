@@ -8,13 +8,17 @@ const totalCases = work.length
 ---
 
 <Container>
-	<section>
+	<section class="flex flex-col gap-8">
 		{
+
 			work.map((c, idx) => {
-				return <div class="py-4">
+
+				return (
 					<CaseSingle title={c.title} img={c.cover} color={c.color_code} current={idx + 1} total={totalCases} />
-				</div>
+				)
+
 			})
+
 		}
-	</section>	
-</Container>	
+	</section>
+</Container>

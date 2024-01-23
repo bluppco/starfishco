@@ -1,6 +1,6 @@
 ---
 // IMPORTING CONSTANTS
-import { HOME_INTRO_VIDEO } from "../../constants/cdn";
+import { CDN_LINK, HOME_INTRO_VIDEO } from "../../constants/cdn";
 ---
 
 <section class="z-20 bg-zinc-600 h-screen w-full realtive">
@@ -12,7 +12,7 @@ import { HOME_INTRO_VIDEO } from "../../constants/cdn";
         preload="auto"
         class="h-full w-full object-cover"
     >
-        <source src={HOME_INTRO_VIDEO} type="video/mp4"/>
+        <source src={ CDN_LINK + HOME_INTRO_VIDEO } type="video/mp4"/>
     </video>
 
 	<div class="absolute bottom-36 lg:bottom-14 flex justify-center w-full">
