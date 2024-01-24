@@ -1,0 +1,38 @@
+---
+import Container from "../../layouts/Container.astro"
+
+const runtime = Astro.locals.runtime
+const env = runtime.env.ENVIRONMENT
+---
+{
+
+    env === "staging" &&
+    <section id="nav-banner" class="py-2 fixed z-20 bg-white w-full h-10 transition-transform delay-100 duration-300 ease-out bg-gradient-to-r from-teal-400 to-yellow-200">
+        <Container>
+            <p class="font-roboto text-xs lg:text-sm text-center text-black">This is staging environment created by <span class="underline underline-offset-4 font-semibold"><a href="https://blupp.co" target="_blank">Blupp Company</a></span> with some initial <span class="underline underline-offset-4 font-semibold"><a href="/benchmarking">benchmarking</a></span>. You can check the codebase on <span class="underline underline-offset-4 font-semibold"><a href="https://github.com/bluppco/starfishco" target="_blank">Github</a></span>.</p>
+        </Container>
+    </section>
+
+}
+
+<script>
+    const navBanner = document.getElementById("nav-banner")  
+
+    let currentYScroll = window.scrollY
+    let fullVideoHeight = window.innerHeight
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY - currentYScroll > 0) {
+            // Scroll is going down
+            // so remove nave bar 
+            navBanner.classList.add("-translate-y-full")
+        } else {
+            // Scroll is going down
+            // Scroll is going up
+            // so show nave bar 
+            navBanner.classList.remove("-translate-y-full")
+        }
+
+        currentYScroll = window.scrollY
+    })
+</script>

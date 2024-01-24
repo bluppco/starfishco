@@ -65,8 +65,6 @@ const BenchmarkingJSX = ( props ) => {
                     {
 
                         data.data.map( ( value ) => {
-
-                            console.log( value )
                             return (
                                 <TableRow className={ value.type === "Total" ? "font-semibold" : "" }>
                                     <TableCell className="font-semibold">{ value.type }</TableCell>
@@ -103,8 +101,6 @@ const BenchmarkingJSX = ( props ) => {
                     {
 
                         data.bandwidth.map( ( value ) => {
-
-                            console.log( value )
                             return (
                                 <TableRow className={ value.type === "Total" ? "font-semibold" : "" }>
                                     <TableCell className="font-semibold">{ value.hits_text }</TableCell>

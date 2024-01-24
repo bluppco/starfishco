@@ -23,6 +23,7 @@ import Contact from "../components/home/Contact.astro";
 
 // IMPORTING CONSTANTS
 import {OG_IMAGE} from "../constants/website";
+import HeaderBanner from "@/components/common/HeaderBanner.astro";
 ---
 
 <Layout
@@ -30,6 +31,8 @@ import {OG_IMAGE} from "../constants/website";
 	description={ meta_tags.description }
 	image={OG_IMAGE}
 >
+
+	<HeaderBanner />
 
 	{/* Navigation */}
 	<Nav />

@@ -1,11 +1,14 @@
 ---
+const runtime = Astro.locals.runtime
+const env = runtime.env.ENVIRONMENT
+
 import { Icon } from "astro-icon/components";
 
 import Container from "../../layouts/Container.astro";
 import MenuButton from "./MenuButton.astro";
 ---
 
-<section id="nav-bar" class="py-4 z-30 fixed top-0 left-0 w-full transition-transform delay-100 duration-300 ease-out">
+<section id="nav-bar" class={`py-4 z-30 fixed top-0 left-0 w-full transition-transform delay-100 duration-300 ease-out ${ env === "staging" && "mt-10" }`}>
     <Container>
         <div class="flex justify-between items-center">
             <a href="/">
@@ -37,12 +40,12 @@ import MenuButton from "./MenuButton.astro";
         if (window.scrollY - currentYScroll > 0) {
             // Scroll is going down
             // so remove nave bar 
-            navBar.classList.add("-translate-y-full")
+            navBar.classList.add("-translate-y-28")
         } else {
             // Scroll is going down
             // Scroll is going up
             // so show nave bar 
-            navBar.classList.remove("-translate-y-full")
+            navBar.classList.remove("-translate-y-28")
         }
 
         currentYScroll = window.scrollY
