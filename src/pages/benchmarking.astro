@@ -10,17 +10,21 @@ import Container from "@/layouts/Container.astro"
 import Footer from "@/components/common/Footer.astro"
 import Header from "@/components/common/Nav.astro"
 import BenchmarkingJSX from "@/components/benchmarking"
+import HeaderBanner from "@/components/common/HeaderBanner.astro"
 ---
 <Layout
 	title={ "Benchmarking" }
 	description={ "Benchmarking" }
 	image=""
 >
+    <HeaderBanner />    
     <Header />
+
     <section class="py-40">
         <Container>
             <BenchmarkingJSX client:load data={ benchmarking }/>
         </Container>
     </section>
+
     <Footer />
 </Layout>
