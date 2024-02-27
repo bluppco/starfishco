@@ -10,5 +10,5 @@ import icon from "astro-icon";
 export default defineConfig({
   integrations: [tailwind(), react(), mdx(), icon()],
   output: "server",
-  adapter: cloudflare()
+  adapter: cloudflare({ mode: 'advanced' })
 });
