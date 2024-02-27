@@ -7,6 +7,9 @@ const {
 
 // IMPORTING CONSTANTS
 import { WEBSITE, FAVICON } from "../constants/website";
+
+// IMPORT GLOBAL STYLING
+import "../styles/globals.css"
 ---
 
 
@@ -38,3 +41,17 @@ import { WEBSITE, FAVICON } from "../constants/website";
         <slot />
     </body>
 </html>
+
+<style>
+    body::-webkit-scrollbar {
+        width: 0.3em;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: gray;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background-color: black;
+    }
+</style>

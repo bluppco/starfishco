@@ -1,0 +1,21 @@
+---
+// IMPORTING CONSTANTS
+import { CDN_LINK, HOME_INTRO_VIDEO } from "../../constants/cdn";
+---
+
+<section class="z-20 bg-zinc-600 h-screen w-full realtive">
+	<video
+        loop={ true }
+        autoplay={ true }
+        muted={ true }
+        playsinline={ true }
+        preload="auto"
+        class="h-full w-full object-cover"
+    >
+        <source src={ CDN_LINK + HOME_INTRO_VIDEO } type="video/mp4"/>
+    </video>
+
+	<div class="absolute bottom-36 lg:bottom-14 flex justify-center w-full">
+		<img src="mouse.svg" alt="Mouse Scroll Animation" class="h-12 lg:h-14 animate-pulse"  />
+	</div>
+</section>

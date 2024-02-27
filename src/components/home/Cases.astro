@@ -1,21 +1,24 @@
 ---
 // COMPONENTS
-import SingleCase from "./SingleCase.astro";
+import Container from "../../layouts/Container.astro";
+import CaseSingle from "./CaseSingle.astro";
 
-// CONSTANTS
-import { CASES } from "../../constants/cases";
-const totalCases = CASES.length
-const { data } = Astro.props
-// console.log( "a", data )
+const { work } = Astro.props
+const totalCases = work.length
 ---
 
-<section>
-	{
-		data.map((c, idx) => {
-			console.log(c)
-			return <div class="py-8">
-				<SingleCase title={c.title} img={c.cover} alt={c.alt} color={c.color_code} current={idx + 1} total={data} />
-			</div>
-		})
-	}
-</section>
+<Container>
+	<section class="flex flex-col gap-8">
+		{
+
+			work.map((c, idx) => {
+
+				return (
+					<CaseSingle title={c.title} img={c.cover} color={c.color_code} current={idx + 1} total={totalCases} />
+				)
+
+			})
+
+		}
+	</section>
+</Container>

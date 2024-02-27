@@ -1,8 +1,15 @@
 ---
 // CONSTANTS
-import { BRAND_EXPERIENCE_GIF } from "../../constants/cdn";
+import { BRAND_EXPERIENCE_GIF_DESK, BRAND_EXPERIENCE_GIF_MOBILE } from "../../constants/cdn";
+import Container from "../../layouts/Container.astro";
 ---
 
-<section class="w-full my-14">
-	<img src={BRAND_EXPERIENCE_GIF} alt="Brand Experience Banner"  class="mx-auto" />
-</section>
+<Container>
+	<section class="w-full my-14">
+
+		{/* Different image on different sizes (see class) */}
+		<img src={BRAND_EXPERIENCE_GIF_DESK} alt="Brand Experience Banner"  class="mx-auto hidden lg:block" />
+		<img src={BRAND_EXPERIENCE_GIF_MOBILE} alt="Brand Experience Banner"  class="mx-auto block lg:hidden" />
+
+	</section>
+</Container>	

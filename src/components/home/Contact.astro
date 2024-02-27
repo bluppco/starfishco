@@ -1,17 +1,19 @@
 ---
-import {Icon} from "astro-icon/components";
+import Container from "../../layouts/Container.astro";
 ---
 
-<section class="z-20 p-32">
-	<p class="uppercase text-3xl">contact</p>
+<Container>
+	<section class="z-20 py-28 lg:p-32">
+		<p class="uppercase text-md lg:text-3xl">contact</p>
 
-	<a href="https://www.starfishco.com/contact">
-		<div class="group flex items-center gap-2 cursor-pointer">
-			<span class="font-bold text-8xl">Let's </span>
-			<div class="flex items-baseline gap-2">
-				<span class="text-8xl">talk</span>
-				<Icon name="arrow" class="group-hover:translate-x-4" font-size="2.8rem" class="rotate-45  group-hover:translate-x-4 transition transform duration-300"/>
-			</div>	
-		</div>
-	</a>
-</section>
+		<a href="https://www.starfishco.com/contact">
+			<div class="group flex items-center gap-2 cursor-pointer">
+				<span class="font-bold text-5xl lg:text-9xl">Let's </span>
+				<div class="flex items-baseline gap-2">
+					<span class="text-5xl lg:text-9xl">talk</span>
+					<img src="/arrow.svg" class="rotate-45 group-hover:translate-x-4 transition transform duration-300 lg:h-12" />
+				</div>	
+			</div>
+		</a>
+	</section>
+</Container>	

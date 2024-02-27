@@ -1,5 +1,6 @@
-export const HOME_INTRO_VIDEO = "https://www.starfishco.com/wp-content/uploads/2022/12/starfish_desktop_18_sec-1080p.mp4"
-export const BRAND_EXPERIENCE_GIF = "https://www.starfishco.com/wp-content/themes/Starfish/assets/img/sf_textanimation_desktop.gif"
+export const HOME_INTRO_VIDEO = "starfish_desktop_18_sec-1080p.mp4"
+export const BRAND_EXPERIENCE_GIF_DESK = "/brandExp_desktop.webp"
+export const BRAND_EXPERIENCE_GIF_MOBILE = "/brandExp_mobile.webp"
 export const CDN_LINK = "https://blupp.b-cdn.net/starfishco/"
 export const IMAGE_QUALITY = 80
 export const IMAGE_QUALITY_60 = 60
