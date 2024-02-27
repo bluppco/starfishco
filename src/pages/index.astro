@@ -1,8 +1,8 @@
 ---
 import { homeAPI } from "../api/home"
 
-const runtime = Astro.locals.runtime
-const data = await homeAPI( runtime.env.ENVIRONMENT )
+// const runtime = Astro.locals.runtime
+const data = await homeAPI( "staging" )
 
 const { meta_tags, work } = data
 
