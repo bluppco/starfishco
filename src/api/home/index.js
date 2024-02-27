@@ -4,6 +4,7 @@ export const homeAPI = async ( environment ) => {
 
     try {
 
+        console.log( "runtime is ", environment )
         const endpoint = endpointFetch( environment )
 
         // NETWORK CALL TO GET DATA
